@@ -49,6 +49,8 @@ class Login extends React.Component {
       )
     }
   }
+
+ 
   export default class ConnectedLogin extends React.Component{
     render () {
       return(
@@ -58,4 +60,3 @@ class Login extends React.Component {
       )
     }
   }
-  

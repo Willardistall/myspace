@@ -34,7 +34,7 @@ class Register extends React.Component {
             name='email'
             value={email}
             placeholder='Email'
-            onChanhge={this.handleChange}
+            onChange={this.handleChange}
             />
           <Form.Input
             label="Password"
@@ -62,6 +62,8 @@ class Register extends React.Component {
     )
   }
 }
+
+
 
 export default class ConnectedRegister extends React.Component {
   render() {

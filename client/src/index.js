@@ -4,7 +4,7 @@ import App from './App';
 import { initMiddleware, } from 'devise-axios';
 import { BrowserRouter, } from 'react-router-dom';
 import {AuthProvider, } from "./providers/AuthProvider";
-import 'semantic-ui-css'
+import 'semantic-ui-css/semantic.min.css'
 
 initMiddleware();
 
