@@ -13,7 +13,7 @@ const Navbar = (props) => {
             name="Logout"
             onClick={ () => handleLogout(props.history) }
           />
-        </Menu.Menu>
+        </Menu.Menu> 
       );
     } else {
       return (
@@ -43,6 +43,12 @@ const Navbar = (props) => {
             <Menu.Item 
               name="Home"
               active={props.location.pathname === "/"}
+            />
+          </Link>
+          <Link to="/myfriends">
+            <Menu.Item 
+              name="Friends"
+              active={props.location.pathname === "/myfriends"}
             />
           </Link>
           { rightNavItems(auth) }
