@@ -1,17 +1,23 @@
-import React from 'react';
-import { AuthConsumer, } from "../providers/AuthProvider";
+import React, { useContext, } from 'react';
+import { AuthContext, AuthConsumer } from "../providers/AuthProvider";
 import { Menu, } from 'semantic-ui-react';
 import { Link, withRouter, } from 'react-router-dom'
 
 const Navbar = (props) => {
+  const auth = useContext(AuthContext)
 
-  const rightNavItems = ({ user, handleLogout }) => {
-    if (user) {
+  const rightNavItems = () => {
+    const { location, history, } = props;
+
+    if (auth.user) {
       return (
         <Menu.Menu position="right">
+          <Menu.Item>
+            { auth.user.email }
+          </Menu.Item>
           <Menu.Item
             name="Logout"
-            onClick={ () => handleLogout(props.history) }
+            onClick={ () => auth.handleLogout(history) }
           />
         </Menu.Menu> 
       );
@@ -20,12 +26,14 @@ const Navbar = (props) => {
         <Menu.Menu position="right">
           <Link to="/login">
             <Menu.Item 
+              id='login'
               name="Login"
-              active={props.location.pathname === "/login"}
+              active={location.pathname === "/login"}
             />
           </Link>
           <Link to="/register">
             <Menu.Item 
+              id='register'
               name="Register"
               active={props.location.pathname === "/register"}
             />
@@ -50,6 +58,13 @@ const Navbar = (props) => {
               name="Friends"
               active={props.location.pathname === "/myfriends"}
             />
+          </Link>
+          <Link to='/blogs'> 
+          <Menu.Item
+          name='Blogs'
+          id='Blogs'
+          active={props.location.pathname === '/blogs'}
+          />
           </Link>
           { rightNavItems(auth) }
         </Menu>
