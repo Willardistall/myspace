@@ -24,11 +24,11 @@ const Navbar = (props) => {
     } else {
       return (
         <Menu.Menu position="right">
-          <Link to="/login">
+          <Link to="/HelpFile">
             <Menu.Item 
               id='Help'
               name="Help"
-              active={location.pathname === "/login"}
+              active={location.pathname === "/HelpFile"}
             />
           </Link>
           <Link to="/register">
