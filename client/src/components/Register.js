@@ -26,8 +26,9 @@ class Register extends React.Component {
     return (
       <Segment basic>
         <Header as='h1' textAlign='center'> Register </Header>
-        <Form onSubmit={this.handleSubmit}>
+        <Form align='center' onSubmit={this.handleSubmit}>
           <Form.Input
+            width='6'
             label="Email"
             required
             autoFocus
@@ -37,6 +38,7 @@ class Register extends React.Component {
             onChange={this.handleChange}
             />
           <Form.Input
+            width='6'
             label="Password"
             required
             name='password'
@@ -46,6 +48,7 @@ class Register extends React.Component {
             onChange={this.handleChange}
             />
           <Form.Input
+            width='6'
             label="Password Confirmation"
             required
             name='passwordConfirmation'

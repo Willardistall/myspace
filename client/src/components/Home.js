@@ -1,7 +1,7 @@
 import React, {useState, useEffect, } from 'react';
 import axios from 'axios';
 import { Link, } from 'react-router-dom';
-import { Header, Image, Card, Button, Icon, } from 'semantic-ui-react';
+import { Header, Image, Card, Button, Icon, Segment } from 'semantic-ui-react';
 
 const Home = () => {
   const [friends, setFriends] = useState([]);
@@ -33,9 +33,13 @@ const Home = () => {
     if (friend) {
       return (
         <div>
+          <Header as='h1' textAlign='center'>OUR SPACE</Header>
+          <Header as='h3' icon textAlign='center'>
+      <Icon name='users' massive circular />
+      <Header.Content>A Place for Friends</Header.Content>
+    </Header>
           <br />
-          <Header as='h1'> MYSPACE </Header>
-          <br />
+          <Segment>
           <Card key={friend.id}>
             <Image src={friend.avatar} />
             <Card.Content>
@@ -53,10 +57,10 @@ const Home = () => {
               </Card.Content>
           <Card.Content extra>
             <Button color="red" icon basic onClick={() => downVote(friend.id)}>
-              <Icon name="thumbs down" />
+            <Icon name="delete" /> DENY <Icon name="delete" />
             </Button>
             <Button color="green" icon basic onClick={() => upVote(friend.id)}>
-              <Icon name="thumbs up" />
+              <Icon name="plus" /> ADD <Icon name="plus" />
             </Button>
           </Card.Content>
           </Card>
@@ -65,6 +69,13 @@ const Home = () => {
               View Friends
             </Button>
           </Link>
+          <div>
+            RECENT POSTS
+          </div>
+          </Segment>
+          <div>
+
+          </div>
         </div>
       );
     } else {

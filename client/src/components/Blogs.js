@@ -3,7 +3,7 @@ import BlogForm from "./BlogForm";
 import axios from 'axios';
 import {List, Header, Segment, Button, } from 'semantic-ui-react';
 
-const Blogs = (props) => {
+export const Blogs = (props) => {
   const [blogs, setBlogs] = useState([]);
   const [showForm, setShowForm] = useState(false);
 
@@ -29,11 +29,11 @@ const Blogs = (props) => {
 
   return (
     <>
-      <Header as="h1">My Blogs</Header>
+      <Header as="h1">My Posts</Header>
       <br />
       { showForm && <BlogForm toggleForm={setShowForm} add={ blog => setBlogs([ ...blogs, blog, ])} /> }
       <Button onClick={() => setShowForm(!showForm)}>
-        { showForm ? "Close Form" : "Show Form" }
+        { showForm ? "Close Posts" : "New Post" }
       </Button>
       <List>
         { renderBlogs() }

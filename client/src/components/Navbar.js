@@ -1,6 +1,6 @@
 import React, { useContext, } from 'react';
 import { AuthContext, AuthConsumer } from "../providers/AuthProvider";
-import { Menu, } from 'semantic-ui-react';
+import { Menu, Icon } from 'semantic-ui-react';
 import { Link, withRouter, } from 'react-router-dom'
 
 const Navbar = (props) => {
@@ -26,15 +26,15 @@ const Navbar = (props) => {
         <Menu.Menu position="right">
           <Link to="/login">
             <Menu.Item 
-              id='login'
-              name="Login"
+              id='Help'
+              name="Help"
               active={location.pathname === "/login"}
             />
           </Link>
           <Link to="/register">
             <Menu.Item 
-              id='register'
-              name="Register"
+              id='Contact Us'
+              name="Contact Us"
               active={props.location.pathname === "/register"}
             />
           </Link>
@@ -61,7 +61,7 @@ const Navbar = (props) => {
           </Link>
           <Link to='/blogs'> 
           <Menu.Item
-          name='Blogs'
+          name='My Posts'
           id='Blogs'
           active={props.location.pathname === '/blogs'}
           />

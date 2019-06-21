@@ -1,6 +1,6 @@
 import React, { useState, } from "react";
 import axios from "axios";
-import { Form, } from "semantic-ui-react";
+import { Form, TextArea } from "semantic-ui-react";
 import { useFormInput, } from "../hooks/useFormInput";
 
 
@@ -19,23 +19,26 @@ const handleSubmit = (e) => {
 return (
   <>
     <Form onSubmit={handleSubmit}>
-      <Form.Group widths="equal">
+      <Form.Group >
         <Form.Input
           label="Title"
           placeholder="Title"
           name="title"
+          width = '4'
           required
           { ...title }
         />
-        <Form.Input
+        </Form.Group>
+        <Form.Field
+          control={TextArea}
           label="Body"
-          placeholder="Body"
+          placeholder="What are you writing about today?"
           name="body"
+          width = '9'
           required
           { ...body }
         />
-      </Form.Group>
-      <Form.Button>Submit</Form.Button>
+      <Form.Button>Publish!</Form.Button>
     </Form>
   </>
 )
